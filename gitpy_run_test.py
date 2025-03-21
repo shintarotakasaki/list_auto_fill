@@ -28,8 +28,8 @@ sys.path.append(REPO_NAME)
 
 # 必要なモジュールを事前にインポート
 try:
-    xl_des = importlib.import_module('xl_des.py')
-    pdf_des = importlib.import_module('pdf_des.py')
+    xl_des = importlib.import_module('xl_des')
+    pdf_des = importlib.import_module('pdf_des')
 except ImportError as e:
     st.error(f"モジュールのインポートに失敗しました: {e}")
     st.stop()
