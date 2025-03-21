@@ -16,12 +16,16 @@ import importlib
 
 import streamlit as st
 
+import shutil
+
 # GitHub リポジトリのクローン
 REPO_NAME = 'list_auto_fill'
 REPO_URL = 'https://github.com/shintarotakasaki/list_auto_fill.git'
 
-if not os.path.exists(REPO_URL):
-    subprocess.run(['git', 'clone', REPO_URL])
+if os.path.exists(REPO_NAME):
+    shutil.rmtree(REPO_NAME)
+
+subprocess.run(['git', 'clone', REPO_URL])
 
 # モジュールパスを追加
 sys.path.append(REPO_NAME)
